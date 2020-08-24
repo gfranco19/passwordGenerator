@@ -40,6 +40,7 @@ header {
   margin: 0 auto;
   max-width: 800px;
   padding: 30px 40px;
+  text-align: center;
 }
 
 .card-header::after {
@@ -134,7 +135,7 @@ button[disabled] {
 }
 
 @media (max-width: 690px) {
-  .btn {
+  .btn, .btn2 {
     font-size: 1rem;
     margin: 16px 0px 0px 0px;
     padding: 10px 15px;
@@ -146,7 +147,7 @@ button[disabled] {
 }
 
 @media (max-width: 500px) {
-  .btn {
+  .btn, .btn2 {
     font-size: 0.8rem;
   }
 }

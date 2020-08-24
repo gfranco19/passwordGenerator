@@ -1,8 +1,9 @@
+//this will be defined one the user choses his answer
 let userChoice="";
 let userChoice2="";
 let userChoice3="";
 let userChoice4="";
-
+//the length has to be zero and then added to the users length choice
 let length = 0;
 //values for password
 let valueNum= "0123456789";
@@ -11,6 +12,7 @@ let valueLow= "abcdefghijklmnopqrstuvwxyz";
 let valueSpecial= "!@#$%^&*()_+";
 //password will always start blank
 let valuePass="";
+//this will be the randomized version of the password with the chosen length
 let pwd = "";
 
 //function for capitol letters
@@ -84,12 +86,13 @@ function generate(){
                 
                 console.log(valuePass);
                 console.log(length);
-
+//this is a loop that will randomize the password as long as it the length size chosen length
             for (var i = 0; i < length; i++){
                 pwd += valuePass.charAt(Math.floor(Math.random()* Math.floor(valuePass.length )));
             
                
             }
+            //displays the  password in the text box
             document.querySelector("#password").value = pwd;
            
         console.log(pwd); 
@@ -98,12 +101,13 @@ function generate(){
 }
 }
 
-
+//function to relaod page when clear is hit
 function refresh(){
-            //function to relaod page
+            
 setTimeout(function(){
     
     window.location.reload(1);
  }, 0);
  
 }
+
