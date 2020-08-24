@@ -11,51 +11,58 @@ let valueLow= "abcdefghijklmnopqrstuvwxyz";
 let valueSpecial= "!@#$%^&*()_+";
 //password will always start blank
 let valuePass="";
-let pwd ="";
+let pwd = "";
 
 //function for capitol letters
 function cap(){
-    userChoice = prompt("Would you like Uppercase letters in your password? Enter 'y' for yes and 'n' for no");
-    userChoice= userChoice.toLocaleLowerCase();
-         if ( userChoice === "y"){
+    userChoice = confirm("Would you like Uppercase letters in your password? Press 'Okay' for yes and 'Cancel' for no");
+    
+         if ( userChoice === true){
              valuePass=valuePass+valueCap;
-        if ( userChoice === "n"){
-            valuePass=valuePass+"";
-        }
-}
+             if ( userChoice === false){
+            valuePass=valuePass+"";            
+            
+         }
+    }
 }
 //function for lower case
 function low(){
-    userChoice2 = prompt("Would you like lowercase letters in your password? Enter 'y' for yes and 'n' for no");
-    userChoice2= userChoice2.toLocaleLowerCase();
-         if ( userChoice2 === "y"){
+    userChoice2 = confirm("Would you like lowercase letters in your password? Press 'Okay' for yes and 'Cancel' for no");
+    
+         if ( userChoice2 === true){
              valuePass=valuePass+valueLow;
-             if ( userChoice2 === "n"){
-                valuePass=valuePass+"";
-            }
+             if ( userChoice2 === false){
+                valuePass=valuePass+"";        
+            
+        }
+    }
 }
-}
+
 //function for number
 function num(){
-    userChoice3 = prompt("Would you like numbers in your password? Enter 'y' for yes and 'n' for no");
-    userChoice3=userChoice3.toLocaleLowerCase();
-    if ( userChoice3 === "y"){
+    userChoice3 = confirm("Would you like numbers in your password? Press 'Okay' for yes and 'Cancel' for no");
+    
+    if ( userChoice3 === true){
         valuePass=valuePass+valueNum;
-        if ( userChoice3 === "n"){
-            valuePass=valuePass+"";
+            if ( userChoice3 === false){
+                valuePass=valuePass+"";
+            
         }
-}
+        
+        
+    }
 }
 
 //function for special characters
 function special(){
-userChoice4 = prompt("Would you like special characters in your password? Enter 'y' for yes and 'n' for no");
-userChoice4= userChoice4.toLocaleLowerCase();
-if ( userChoice4 === "y"){
-   valuePass=valuePass+valueSpecial;
-   if ( userChoice4 === "n"){
-    valuePass=valuePass+"";
-   }
+    userChoice4 = confirm("Would you like special characters in your password? Press 'Okay' for yes and 'Cancel' for no");
+    
+        if ( userChoice4 === true){
+        valuePass=valuePass+valueSpecial;
+         if ( userChoice4 === false){
+            valuePass=valuePass+"";
+            
+        }
 }
 }
 
@@ -78,11 +85,25 @@ function generate(){
                 console.log(valuePass);
                 console.log(length);
 
-            for (var i = 0; i <= length; i++){
-                pwd = pwd +valuePass.charAt(Math.floor(Math.random()* Math.floor(valuePass.length -1)));
+            for (var i = 0; i < length; i++){
+                pwd += valuePass.charAt(Math.floor(Math.random()* Math.floor(valuePass.length )));
+            
                
             }
+            document.querySelector("#password").value = pwd;
            
-        }
-        console.log(pwd);
-    }
+        console.log(pwd); 
+
+
+}
+}
+
+
+function refresh(){
+            //function to relaod page
+setTimeout(function(){
+    
+    window.location.reload(1);
+ }, 0);
+ 
+}
